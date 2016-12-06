@@ -13,6 +13,14 @@ import * as cookieParser from 'cookie-parser';
 import * as morgan from 'morgan';
 import * as compression from 'compression';
 
+/*
+ * Se usa require para importar, porque mongoose no esta escrito en ES6 y da problemas
+ * Para usar docker:
+ * 1) docker run --name mongo-local -v /Users/bufface_valtech/DBs/Mongo:/data/db -d -p27017:27017 mongo:latest
+ **/
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/logros');
+
 // Angular 2
 import { enableProdMode } from '@angular/core';
 // Angular 2 Universal
