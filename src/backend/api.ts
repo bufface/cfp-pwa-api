@@ -4,8 +4,13 @@ import {Logro} from './models/logro';
 const router = express.Router();
 
 router.route('/logros')
+  .get((req, res) => {
+    Logro
+      .find({})
+      .exec()
+      .then((docs) => res.json(docs));
+  })
   .post((req, res) => {
-
     const logro = new Logro({
       title: req.body.title,
       description: req.body.description,
