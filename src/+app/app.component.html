@@ -1,6 +1,6 @@
 <md-toolbar class="primary">
   <div class="row">
-    <div class="col-xs-1">
+    <div class="col-xs-1" (click)="sdnav.toggle()">
       <md-icon>reorder</md-icon>
     </div>
     <div class="col-xs-10">
@@ -8,4 +8,12 @@
     </div>
   </div>
 </md-toolbar>
-<router-outlet></router-outlet>
+<md-sidenav-layout>
+  <md-sidenav #sdnav mode="push">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+  </md-sidenav>
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-layout>
